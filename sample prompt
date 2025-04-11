@@ -1,0 +1,2 @@
+I would like to generate an ER diagram where there are below tables:
+orders, payments, payout, payment_methods_dim, psp_dim, customer_dim. I need order_id, order_amount, order_date, customer_id, payment_method in order_fact table and corresponding columns in payments table with payment_id, unique transaction key. add other columns in other tables and divide them to dim and fact and give me the ER diagram

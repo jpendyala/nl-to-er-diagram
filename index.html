@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NL to ER Diagram</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        textarea { width: 95%; min-height: 100px; margin-bottom: 10px; padding: 10px; border: 1px solid #ccc; }
+        button { padding: 10px 15px; cursor: pointer; }
+        #error { color: red; margin-top: 10px; }
+        #result-container { margin-top: 20px; border: 1px solid #eee; padding: 15px; }
+        #mermaid-code { background-color: #f5f5f5; padding: 10px; margin-top: 10px; white-space: pre-wrap; word-wrap: break-word; max-height: 200px; overflow-y: auto; }
+        .mermaid { text-align: center; margin-top: 15px; } /* Mermaid diagram container */
+         #loading { display: none; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Natural Language to ER Diagram</h1>
+    <p>Enter a description of your database schema below:</p>
+
+    <textarea id="prompt-input" placeholder="e.g., A user has many posts. A post has many comments. Users have id, name, email. Posts have id, title, content, user_id. Comments have id, text, post_id, user_id."></textarea>
+    <br>
+    <button id="generate-btn">Generate ER Diagram</button>
+
+     <div id="loading">Generating diagram...</div>
+    <div id="error"></div>
+
+    <div id="result-container" style="display: none;">
+        <h2>Generated Diagram:</h2>
+        <div class="mermaid" id="mermaid-diagram">
+            </div>
+
+        <h2>Raw Mermaid Code:</h2>
+        <pre id="mermaid-code"><code></code></pre>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <script src="script.js"></script>
+
+</body>
+</html>
